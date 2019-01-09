@@ -1,0 +1,10 @@
+name	x	y	z	von	bis	fixed
+AlbLimes	-0.162	1.149	-0.519	97	260	fixed
+DonauLimesPhase2	-0.43	0.046	-0.372	70	260	fixed
+Elisabethenstrasse	-0.479	-0.204	0.27	74	104	fixed
+HadriansWall	0.787	2.717	2.279	122	230	fixed
+MainLimes	1.067	-0.223	0.273	0	0	schwebend
+Neckarlimes	-0.155	-0.021	-0.973	117	260	fixed
+Odenwaldlimes	2.540	-1.215	1.228	0	0	schwebend
+Wetteraulimes	0.695	-0.019	-0.092	110	260	fixed
+ÖstlicherWetterauLimes	0.864	-0.585	-0.103	105	260	fixed

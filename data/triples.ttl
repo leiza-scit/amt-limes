@@ -1,0 +1,62 @@
+@prefix amt: <http://academic-meta-tool.xyz/vocab#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rgzm: <http://rgzm.de/datingmechanism#> .
+
+# AMT Ontology - Leonard Edition
+
+amt:Concept rdfs:subClassOf rdfs:Class .
+amt:Role rdfs:subClassOf rdf:Property .
+amt:Axiom rdfs:subclassOf rdfs:Class .
+amt:InferenceAxiom rdfs:subClassOf amt:Axiom .
+amt:IntegrityAxiom rdfs:subClassOf amt:Axiom .
+amt:RoleChainAxiom rdfs:subClassOf amt:InferenceAxiom .
+amt:InverseAxiom rdfs:subClassOf amt:InferenceAxiom .
+amt:DisjointAxiom rdfs:subClassOf amt:IntegrityAxiom .
+amt:SelfDisjointAxiom rdfs:subClassOf amt:IntegrityAxiom .
+amt:Logic rdfs:subClassOf rdfs:Class .
+amt:LukasiewiczLogic rdf:type amt:Logic .
+amt:ProductLogic rdf:type amt:Logic .
+amt:GoedelLogic rdf:type amt:Logic .
+
+# Limes Parts concepts (weighted)
+
+rgzm:HW1 amt:instanceOf rgzm:LimesPart. rgzm:HW1 rdfs:label 'HadriansWall'.
+rgzm:WL1 amt:instanceOf rgzm:LimesPart. rgzm:WL1 rdfs:label 'Wetteraulimes'.
+rgzm:ES1 amt:instanceOf rgzm:LimesPart. rgzm:ES1 rdfs:label 'Elisabethenstraße'.
+
+rgzm:NL2 amt:instanceOf rgzm:LimesPart. rgzm:NL2 rdfs:label 'Neckarlimes'.
+rgzm:WL2 amt:instanceOf rgzm:LimesPart. rgzm:WL2 rdfs:label 'Wetteraulimes'.
+rgzm:AL2 amt:instanceOf rgzm:LimesPart. rgzm:AL2 rdfs:label 'Alblimes'.
+
+# Limes Parts concepts (Pearson correlation coefficient normalized)
+
+rgzm:HW3 amt:instanceOf rgzm:LimesPart. rgzm:HW3 rdfs:label 'HadriansWall'.
+rgzm:WL3 amt:instanceOf rgzm:LimesPart. rgzm:WL3 rdfs:label 'Wetteraulimes'.
+rgzm:ES3 amt:instanceOf rgzm:LimesPart. rgzm:ES3 rdfs:label 'Elisabethenstraße'.
+
+rgzm:NL4 amt:instanceOf rgzm:LimesPart. rgzm:NL4 rdfs:label 'Neckarlimes'.
+rgzm:WL4 amt:instanceOf rgzm:LimesPart. rgzm:WL4 rdfs:label 'Wetteraulimes'.
+rgzm:AL4 amt:instanceOf rgzm:LimesPart. rgzm:AL4 rdfs:label 'Alblimes'.
+
+# Allen interval algebra roles (weighted)
+
+_:node01 rdf:subject rgzm:HW1 . _:node01 rdf:predicate rgzm:d . _:node01 rdf:object rgzm:WL1 . _:node01 amt:weight "0.89" .
+_:node02 rdf:subject rgzm:WL1 . _:node02 rdf:predicate rgzm:a . _:node02 rdf:object rgzm:ES1 . _:node02 amt:weight "0.58" .
+
+_:node01i rdf:subject rgzm:ES1 . _:node01i rdf:predicate rgzm:b . _:node01i rdf:object rgzm:WL1 . _:node01i amt:weight "0.28" .
+_:node02i rdf:subject rgzm:WL1 . _:node02i rdf:predicate rgzm:di . _:node02i rdf:object rgzm:HW1 . _:node02i amt:weight "0.10" .
+
+_:node03 rdf:subject rgzm:NL2 . _:node03 rdf:predicate rgzm:f . _:node03 rdf:object rgzm:WL2 . _:node03 amt:weight "0.71" .
+_:node04 rdf:subject rgzm:WL2 . _:node04 rdf:predicate rgzm:f . _:node04 rdf:object rgzm:AL2 . _:node04 amt:weight "0.28" .
+
+_:node03i rdf:subject rgzm:AL2 . _:node03i rdf:predicate rgzm:fi. _:node03i rdf:object rgzm:WL2 . _:node03i amt:weight "0.51" .
+_:node04i rdf:subject rgzm:WL2 . _:node04i rdf:predicate rgzm:fi . _:node04i rdf:object rgzm:NL2 . _:node04i amt:weight "0.12" .
+
+# Allen interval algebra roles (Pearson correlation coefficient normalized)
+
+_:node05 rdf:subject rgzm:HW3 . _:node05 rdf:predicate rgzm:d . _:node05 rdf:object rgzm:WL3 . _:node05 amt:weight "0.762" .
+_:node06 rdf:subject rgzm:WL3 . _:node06 rdf:predicate rgzm:a . _:node06 rdf:object rgzm:ES3 . _:node06 amt:weight "0.780" .
+
+_:node07 rdf:subject rgzm:NL4 . _:node07 rdf:predicate rgzm:f . _:node07 rdf:object rgzm:WL4 . _:node07 amt:weight "0.762" .
+_:node08 rdf:subject rgzm:WL4 . _:node08 rdf:predicate rgzm:f . _:node08 rdf:object rgzm:AL4 . _:node08 amt:weight "0.769" .
