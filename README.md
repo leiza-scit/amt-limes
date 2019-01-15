@@ -1,6 +1,6 @@
 # dm-gt2019
 
-This is an example of the Academic Meta Tool for the talk `Dating Mechanism: Eine Linked Data Strategie zur interoperablen und nachvollziehbaren Modellierung relativer Chronologien am Beispiel südgallischer Terra Sigillata in Limes-Abschnitten` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.x.svg)](https://doi.org/10.5281/zenodo.x) at `Graphentechnologien 2019`. It is based on the Academic Meta Tool. More about AMT at [http://academic-meta-tool.xyz](http://academic-meta-tool.xyz/).
+This is an example of the Academic Meta Tool for the talk `Dating Mechanism: Eine Linked Data Strategie zur interoperablen und nachvollziehbaren Modellierung relativer Chronologien am Beispiel südgallischer Terra Sigillata in Limes-Abschnitten` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2540373.svg)](https://doi.org/10.5281/zenodo.2540373) at `Graphentechnologien 2019`. It is based on the Academic Meta Tool. More about AMT at [http://academic-meta-tool.xyz](http://academic-meta-tool.xyz/).
 
 ## Webapp
 
