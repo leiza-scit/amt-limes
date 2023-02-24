@@ -39,7 +39,7 @@ var AMT = function() {
     };
     var AXIOMS = [];
 
-    var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amteaa2018";
+    var STORE = "https://java-dev.rgzm.de/rdf4j-server/repositories/amt-limes";
     var PREFIX = "http://academic-meta-tool.xyz/vocab#";
     var PREFIX_INSTANCES = "http://rgzm.de/datingmechanism#";
 

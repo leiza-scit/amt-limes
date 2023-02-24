@@ -19,6 +19,42 @@ amt:LukasiewiczLogic rdf:type amt:Logic .
 amt:ProductLogic rdf:type amt:Logic .
 amt:GoedelLogic rdf:type amt:Logic .
 
+# Dating Mechanism Ontology
+
+# concepts
+
+rgzm:LimesPart rdf:type amt:Concept .
+rgzm:LimesPart rdfs:label "Limes Part" .
+rgzm:LimesPart amt:placeholder "Name of a part of the Limes" .
+
+# roles time
+
+rgzm:b rdf:type amt:Role .
+rgzm:b rdfs:label 'before' .
+rgzm:b rdfs:domain rgzm:LimesPart .
+rgzm:b rdfs:range rgzm:LimesPart .
+rgzm:a rdf:type amt:Role .
+rgzm:a rdfs:label 'after' .
+rgzm:a rdfs:domain rgzm:LimesPart .
+rgzm:a rdfs:range rgzm:LimesPart .
+rgzm:d rdf:type amt:Role .
+rgzm:d rdfs:label 'during' .
+rgzm:d rdfs:domain rgzm:LimesPart .
+rgzm:d rdfs:range rgzm:LimesPart .
+rgzm:di rdf:type amt:Role .
+rgzm:di rdfs:label 'contains' .
+rgzm:di rdfs:domain rgzm:LimesPart .
+rgzm:di rdfs:range rgzm:LimesPart .
+
+# time RoleChainAxioms
+
+rgzm:RCA0001 rdf:type amt:RoleChainAxiom .
+rgzm:RCA0001 amt:antecedent1 rgzm:d .
+rgzm:RCA0001 amt:antecedent2 rgzm:a .
+rgzm:RCA0001 amt:consequent rgzm:a .
+rgzm:RCA0001 amt:logic amt:ProductLogic .
+
+
 # Limes Parts concepts (weighted)
 
 rgzm:HW1 amt:instanceOf rgzm:LimesPart. rgzm:HW1 rdfs:label 'HadriansWall'.
@@ -41,22 +77,10 @@ rgzm:AL4 amt:instanceOf rgzm:LimesPart. rgzm:AL4 rdfs:label 'Alblimes'.
 
 # Allen interval algebra roles (weighted)
 
-_:node01 rdf:subject rgzm:HW1 . _:node01 rdf:predicate rgzm:d . _:node01 rdf:object rgzm:WL1 . _:node01 amt:weight "0.89" .
-_:node02 rdf:subject rgzm:WL1 . _:node02 rdf:predicate rgzm:a . _:node02 rdf:object rgzm:ES1 . _:node02 amt:weight "0.58" .
-
-_:node01i rdf:subject rgzm:ES1 . _:node01i rdf:predicate rgzm:b . _:node01i rdf:object rgzm:WL1 . _:node01i amt:weight "0.28" .
-_:node02i rdf:subject rgzm:WL1 . _:node02i rdf:predicate rgzm:di . _:node02i rdf:object rgzm:HW1 . _:node02i amt:weight "0.10" .
-
-_:node03 rdf:subject rgzm:NL2 . _:node03 rdf:predicate rgzm:f . _:node03 rdf:object rgzm:WL2 . _:node03 amt:weight "0.71" .
-_:node04 rdf:subject rgzm:WL2 . _:node04 rdf:predicate rgzm:f . _:node04 rdf:object rgzm:AL2 . _:node04 amt:weight "0.28" .
-
-_:node03i rdf:subject rgzm:AL2 . _:node03i rdf:predicate rgzm:fi. _:node03i rdf:object rgzm:WL2 . _:node03i amt:weight "0.51" .
-_:node04i rdf:subject rgzm:WL2 . _:node04i rdf:predicate rgzm:fi . _:node04i rdf:object rgzm:NL2 . _:node04i amt:weight "0.12" .
+_:node01 rdf:subject rgzm:HW1 . _:node01 rdf:predicate rgzm:d . _:node01 rdf:object rgzm:WL1 . _:node01 amt:weight "0.762" .
+_:node02 rdf:subject rgzm:WL1 . _:node02 rdf:predicate rgzm:a . _:node02 rdf:object rgzm:ES1 . _:node02 amt:weight "0.780" .
 
 # Allen interval algebra roles (Pearson correlation coefficient normalized)
 
 _:node05 rdf:subject rgzm:HW3 . _:node05 rdf:predicate rgzm:d . _:node05 rdf:object rgzm:WL3 . _:node05 amt:weight "0.762" .
 _:node06 rdf:subject rgzm:WL3 . _:node06 rdf:predicate rgzm:a . _:node06 rdf:object rgzm:ES3 . _:node06 amt:weight "0.780" .
-
-_:node07 rdf:subject rgzm:NL4 . _:node07 rdf:predicate rgzm:f . _:node07 rdf:object rgzm:WL4 . _:node07 amt:weight "0.762" .
-_:node08 rdf:subject rgzm:WL4 . _:node08 rdf:predicate rgzm:f . _:node08 rdf:object rgzm:AL4 . _:node08 amt:weight "0.769" .
