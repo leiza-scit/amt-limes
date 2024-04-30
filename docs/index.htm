@@ -175,7 +175,7 @@
               updated.edges[i].role === roleWithPrefix + "fi"
             ) {
               updated.edges[i].color = {
-                color: "blue",
+                color: "black",
                 highlight: "black",
               };
               updated.edges[i].length = 250;
@@ -189,11 +189,6 @@
                   updated.edges[i].role.replace(_AMT.prefix, "") +
                   ": " +
                   Math.floor(updated.edges[i].width * 1000) / 1000;
-              } else {
-                updated.edges[i].label =
-                  updated.edges[i].role.replace(_AMT.prefix, "") +
-                  ": " +
-                  Math.floor(updated.edges[i].width * 100) / 100;
               }
               updated.edges[i].arrows = "to";
               if (
