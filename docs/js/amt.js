@@ -123,42 +123,11 @@ var AMT = function () {
     queryStore(
       "SELECT ?id ?label ?concept WHERE { ?concept rdf:type amt:Concept . ?id amt:instanceOf ?concept . ?id rdfs:label ?label . }",
       function (data) {
-        if (_AMT.mode === "example1" || _AMT.mode === "example2") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].id.includes("1")) {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.nodes = dataCopy;
+        let dataCopy = [];
+        for (var item in data) {
+          dataCopy.push(data[item]);
         }
-        if (_AMT.mode === "example3" || _AMT.mode === "example4") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].id.includes("2")) {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.nodes = dataCopy;
-        }
-        if (_AMT.mode === "example5") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].id.includes("3")) {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.nodes = dataCopy;
-        }
-        if (_AMT.mode === "example6") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].id.includes("4")) {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.nodes = dataCopy;
-        }
+        graph.nodes = dataCopy;
         console.log("NODES", graph.nodes);
         --todo;
         if (todo == 0 && callback) {
@@ -171,66 +140,11 @@ var AMT = function () {
     queryStore(
       "SELECT ?role ?from ?to ?width WHERE { ?role rdf:type amt:Role . ?stmt rdf:subject ?from . ?stmt rdf:predicate ?role . ?stmt rdf:object ?to . ?stmt amt:weight ?width . }",
       function (data) {
-        if (_AMT.mode === "example1") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].role === _AMT.prefix + "d") {
-              dataCopy.push(data[item]);
-            } else if (data[item].role === _AMT.prefix + "a") {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.edges = dataCopy;
+        let dataCopy = [];
+        for (var item in data) {
+          dataCopy.push(data[item]);
         }
-        if (_AMT.mode === "example2") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].role === _AMT.prefix + "di") {
-              dataCopy.push(data[item]);
-            } else if (data[item].role === _AMT.prefix + "b") {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.edges = dataCopy;
-        }
-        if (_AMT.mode === "example3") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].role === _AMT.prefix + "f") {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.edges = dataCopy;
-        }
-        if (_AMT.mode === "example4") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].role === _AMT.prefix + "fi") {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.edges = dataCopy;
-        }
-        if (_AMT.mode === "example5") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].role === _AMT.prefix + "d") {
-              dataCopy.push(data[item]);
-            } else if (data[item].role === _AMT.prefix + "a") {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.edges = dataCopy;
-        }
-        if (_AMT.mode === "example6") {
-          let dataCopy = [];
-          for (var item in data) {
-            if (data[item].role === _AMT.prefix + "f") {
-              dataCopy.push(data[item]);
-            }
-          }
-          graph.edges = dataCopy;
-        }
+        graph.edges = dataCopy;
         console.log("EDGES", graph.edges);
         --todo;
         if (todo == 0 && callback) {

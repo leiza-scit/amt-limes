@@ -88,7 +88,7 @@
       _AMT.thisNodes = [];
       _AMT.thisEdges = [];
       _AMT.inverse = false;
-      _AMT.mode = "example5";
+      _AMT.mode = "example";
       _AMT.reasoning = false;
       _AMT.rdf = "";
       var update = function () {
@@ -180,7 +180,7 @@
               };
               updated.edges[i].length = 250;
               updated.edges[i].smooth = false;
-              if (_AMT.mode === "example5" || _AMT.mode === "example6") {
+              if (_AMT.mode === "example") {
                 updated.edges[i].label =
                   updated.edges[i].role.replace(_AMT.prefix, "") +
                   ": " +
